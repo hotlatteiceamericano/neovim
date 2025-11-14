@@ -39,7 +39,7 @@ return {
         require('dap').step_into()
       end,
       desc = 'Debug: Step Into',
-    },
+    }
     {
       '<F2>',
       function()
