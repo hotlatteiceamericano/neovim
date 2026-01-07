@@ -4,7 +4,7 @@ return {
     'mason-org/mason-lspconfig.nvim',
     opts = {},
     config = function()
-      require('mason-lspconfig').setup { ensure_installed = { 'lua_ls', 'rust_analyzer' } }
+      require('mason-lspconfig').setup { ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls' } }
     end,
   },
   {
@@ -32,6 +32,8 @@ return {
       vim.lsp.config.rust_analyzer = {
         capabilities = capabilities,
       }
+
+      vim.lsp.config.ts_ls = { capabilities = capabilities }
 
       -- Diagnostic keymaps
       vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, { desc = 'Open [D]iagnostic quickfix list' })
