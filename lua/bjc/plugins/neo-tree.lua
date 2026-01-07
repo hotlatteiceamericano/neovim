@@ -24,6 +24,7 @@ return {
             hide_gitignored = false,
           },
         },
+        use_libuv_file_watcher = true, -- Auto-refresh on file changes
       }
     end,
   },
