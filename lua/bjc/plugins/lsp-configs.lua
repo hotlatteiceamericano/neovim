@@ -68,11 +68,25 @@ return {
       }
 
       -- keymaps
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover' })
+      vim.keymap.set('n', 'K', function()
+        vim.lsp.buf.hover {
+          border = {
+            { '╭', 'FloatBorder' },
+            { '─', 'FloatBorder' },
+            { '╮', 'FloatBorder' },
+            { '│', 'FloatBorder' },
+            { '╯', 'FloatBorder' },
+            { '─', 'FloatBorder' },
+            { '╰', 'FloatBorder' },
+            { '│', 'FloatBorder' },
+          },
+        }
+      end, { desc = 'Hover' })
       vim.keymap.set('n', '<leader>gK', vim.lsp.buf.signature_help, { desc = 'Signature Help' })
       vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
       vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = '[G]o to [D]efeinition' })
-      vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = '[G]o to [R]eference' })
+      -- vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = '[G]o to [R]eference' })
+      vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<cr>', { desc = '[G]o to [R]eference' })
       vim.keymap.set('n', '<leader>gs', vim.lsp.buf.signature_help, { desc = '[G]o to [S]ignature' })
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
       --
