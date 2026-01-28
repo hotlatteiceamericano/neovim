@@ -57,7 +57,7 @@ return {
             sort_lastused = true,
             ignore_current_buffer = false,
             theme = 'dropdown', -- Optional: use dropdown theme
-            previewer = true,
+            previewer = false,
             mappings = {
               i = {
                 ['<c-d>'] = 'delete_buffer',
