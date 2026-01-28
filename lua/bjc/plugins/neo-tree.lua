@@ -15,7 +15,7 @@ return {
     --   desc = 'Toggle Neotree',
     -- },
     config = function()
-      vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { desc = 'Toggle Neotree' })
+      vim.keymap.set('n', '\\\\', ':Neotree toggle<CR>', { desc = 'Toggle Neotree' })
       require('neo-tree').setup {
         filesystem = {
           filtered_items = {
